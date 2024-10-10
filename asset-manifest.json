@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/aquatica-static/static/css/main.e6f134f1.css",
-    "main.js": "/aquatica-static/static/js/main.c529c65a.js",
+    "main.js": "/aquatica-static/static/js/main.edd9098c.js",
     "static/js/488.2fcf8ee9.chunk.js": "/aquatica-static/static/js/488.2fcf8ee9.chunk.js",
     "static/media/swimandfly.mp4": "/aquatica-static/static/media/swimandfly.b7fbe0c3074225dc50e7.mp4",
     "static/media/sailboat3.jpg": "/aquatica-static/static/media/sailboat3.c54d9ce266900f3e9cd8.jpg",
@@ -19,11 +19,11 @@
     "static/media/slick.woff": "/aquatica-static/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/aquatica-static/index.html",
     "main.e6f134f1.css.map": "/aquatica-static/static/css/main.e6f134f1.css.map",
-    "main.c529c65a.js.map": "/aquatica-static/static/js/main.c529c65a.js.map",
+    "main.edd9098c.js.map": "/aquatica-static/static/js/main.edd9098c.js.map",
     "488.2fcf8ee9.chunk.js.map": "/aquatica-static/static/js/488.2fcf8ee9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6f134f1.css",
-    "static/js/main.c529c65a.js"
+    "static/js/main.edd9098c.js"
   ]
 }
