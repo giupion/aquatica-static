@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './index.css';
 
 import Dashboard from './components/Dashboard'; 
@@ -13,6 +13,7 @@ root.render(
             <Routes>
                 <Route path="/" element={<Navigate to="/dashboard" />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                {/* Redirect all other routes to /dashboard */}
                 <Route path="*" element={<Navigate to="/dashboard" />} />
             </Routes>
         </Router>
