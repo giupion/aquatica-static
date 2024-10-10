@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './fontwaves.css';
+import logoNegativo from './Logo-scelto-negativo.png'; // Importa il logo negativo
 
 export default function AuthenticatedLayout({ children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
@@ -16,7 +17,7 @@ export default function AuthenticatedLayout({ children }) {
                             {/* Logo */}
                             <Link to="/dashboard">
                                 <img 
-                                    src="/logo/logonegativo/Logo-scelto-negativo.png" 
+                                    src={logoNegativo} // Usa l'importazione del logo
                                     alt="Logo"
                                     className="block h-20 w-30" 
                                 />
