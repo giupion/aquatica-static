@@ -1,0 +1,109 @@
+/* waves.css */
+
+/* Importa il font da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+/* Applica il font globale */
+body p, h1, h2, h3, h4, h5, h6,a {
+    font-family: 'Exo 2', sans-serif !important; /* Font principale */
+    font-size: 16px; /* Dimensione del testo di base */
+    line-height: 1.5; /* Altezza della linea */
+    margin: 0; /* Rimuovi margini di default */
+    padding: 0; /* Rimuovi padding di default */
+}
+
+/* Stile per la classe .dashboard */
+.dashboard {
+    padding: 20px; /* Spaziatura interna */
+    background-color: #ffffff; /* Colore di sfondo del dashboard */
+    border-radius: 8px; /* Angoli arrotondati */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+/* Titoli */
+.title {
+    font-size: 24px; /* Dimensione del titolo */
+    font-weight: 700; /* Grassetto */
+    color: #333; /* Colore del testo */
+}
+
+/* Testo del dashboard */
+.dashboard p {
+    font-size: 16px; /* Dimensione del testo */
+    color: #666; /* Colore del testo */
+}
+
+/* Stili per i caroselli */
+.carousel-container {
+    overflow: hidden; /* Nascondi parti delle immagini che escono */
+    position: relative; /* Posizione relativa per gli elementi figli */
+}
+
+/* Media query per tablet e smartphone */
+@media (max-width: 768px) {
+    .footer .flex {
+        flex-direction: column; /* Cambia la direzione del flex in colonna */
+        align-items: center; /* Centra gli elementi */
+    }
+
+    .footer .flex img {
+        margin-bottom: 10px; /* Margine inferiore per il logo */
+    }
+
+    .footer .flex .footer-col {
+        text-align: center; /* Centra il testo */
+        width: 100%; /* Occupa il 100% della larghezza */
+    }
+
+    .footer .flex .footer-col.mb-4 {
+        margin-bottom: 15px; /* Spaziatura tra le colonne */
+    }
+
+    /* Rendi i caroselli visibili e adattabili su dispositivi mobili */
+    .carousel-container {
+        padding: 0 10px; /* Padding orizzontale per i caroselli */
+    }
+
+    .carousel-image {
+        width: 100%; /* Adatta le immagini alla larghezza del contenitore */
+        height: auto; /* Mantiene le proporzioni */
+        object-fit: cover; /* Assicura che le immagini riempiano il contenitore */
+    }
+
+    /* Limita l'altezza per mantenere la consistenza */
+    .carousel-image {
+        max-height: 250px; /* Altezza massima per le immagini */
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar-collapse {
+        display: none; /* Nascondi il menu di default */
+    }
+    
+    .navbar-toggler {
+        display: block; /* Mostra il bottone per il menu mobile */
+    }
+
+    /* Rendi i caroselli visibili e adattabili su dispositivi mobili */
+    .carousel-image {
+        width: 100%; /* Adatta le immagini alla larghezza del contenitore */
+        height: auto; /* Mantiene le proporzioni */
+        object-fit: cover; /* Assicura che le immagini riempiano il contenitore */
+    }
+
+    /* Limita l'altezza per mantenere la consistenza */
+    .carousel-image {
+        max-height: 250px; /* Altezza massima per le immagini */
+    }
+}
+
+@media (min-width: 960px) {
+    .navbar-collapse {
+        display: flex; /* Mostra il menu a dimensioni maggiori */
+    }
+    
+    .navbar-toggler {
+        display: none; /* Nascondi il bottone per il menu mobile */
+    }
+}

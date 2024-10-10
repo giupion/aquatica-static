@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Impostazioni generali per tutti gli elementi */
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+/* Stili per il body */
+body {
+    font-family: 'Exo 2', sans-serif !important;
+    font-size: 10px;
+    line-height: 20px;
+    
+    color: #555;
+    font-weight: 400;
+    margin: 0; /* Rimuove la striscia bianca sopra */
+    padding: 0;
+}
+
+/* Navbar sticky */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 50; /* Assicura che la navbar sia sopra gli altri elementi */
+    background-color: rgba(0, 0, 50, 0.8); /* Navbar trasparente */
+    backdrop-filter: blur(10px); /* Effetto blur dietro la navbar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra per separare dal contenuto */
+}
+
+/* Stile per il logo nella navbar */
+nav img {
+    height: 60px; /* Altezza per il logo */
+    width: auto;
+}
+
+/* Stili per i link della navbar */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Exo 2', sans-serif !important;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00aaff; /* Colore del testo al passaggio del mouse */
+}
+
+/* Stile per il dropdown */
+.dropdown-trigger {
+    background-color: rgba(0, 0, 50, 0.8); /* Sfondo per il pulsante dropdown */
+    color: white;
+}
+
+.dropdown-trigger:hover {
+    color: #00aaff;
+}
+
+/* Stile per il menu mobile */
+@media (max-width: 960px) {
+    .mobile-menu {
+        display: block;
+        background-color: rgba(0, 0, 50, 0.8);
+    }
+
+    nav img {
+        height: 50px; /* Logo più piccolo su mobile */
+    }
+
+    .navbar .nav-link {
+        font-size: 13px; /* Dimensione del testo */
+        padding: 10px 15px; /* Padding per la leggibilità */
+    }
+
+    .navbar .nav-link:hover {
+        color: #e04f67; /* Cambia il colore al passaggio del mouse */
+    }
+}
+
+/* Stile per i ResponsiveNavLink */
+@media (min-width: 960px) {
+    .navbar .nav-link {
+        font-size: 16px; /* Dimensione del testo per schermi più grandi */
+    }
+}
+
+
+/* Stile generale per il carosello */
+.carousel {
+    display: flex; /* Usare flexbox per la disposizione */
+    overflow: hidden; /* Nascondere le parti non visibili */
+    width: 100%; /* Larghezza al 100% */
+    position: relative; /* Posizionamento relativo per controllare gli elementi */
+}
+
+/* Stile per le slide del carosello */
+.carousel-slide {
+    min-width: 100%; /* Ogni slide occupa il 100% della larghezza del carosello */
+    transition: transform 0.5s ease; /* Transizione per lo spostamento delle slide */
+}
+
+/* Media query per schermi di dimensioni medie */
+@media (max-width: 960px) {
+    .carousel {
+        height: 200px; /* Altezza fissa per il carosello su schermi piccoli */
+    }
+
+    .carousel-slide {
+        min-width: 100%; /* Assicura che ogni slide occupi la larghezza dello schermo */
+    }
+}
+
+/* Media query per schermi piccoli */
+@media (max-width: 600px) {
+    .carousel {
+        height: 150px; /* Altezza ridotta per schermi molto piccoli */
+    }
+
+    .carousel-slide {
+        /* Puoi modificare lo stile delle slide, se necessario */
+        background-size: cover; /* Assicura che l'immagine copra la slide */
+        background-position: center; /* Posiziona l'immagine al centro */
+    }
+}
+
+/* Media query per schermi grandi */
+@media (min-width: 960px) {
+    .carousel {
+        height: 400px; /* Altezza maggiore per schermi più grandi */
+    }
+
+    .carousel-slide {
+        min-width: 50%; /* Ogni slide occupa il 50% della larghezza del carosello */
+    }
+}

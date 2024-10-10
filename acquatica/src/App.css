@@ -1,0 +1,195 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Impostazioni generali per tutti gli elementi */
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+/* Stili per il body */
+body {
+    font-size: 10px;
+    line-height: 20px;
+    font-family: 'Exo 2', sans-serif !important;
+    
+    color: #555;
+    font-weight: 400;
+    margin: 0; /* Rimuove la striscia bianca sopra */
+    padding: 0;
+}
+
+/* Navbar sticky */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 50; /* Assicura che la navbar sia sopra gli altri elementi */
+    background-color: rgba(0, 0, 50, 0.8); /* Navbar con sfondo leggero e trasparente */
+    backdrop-filter: blur(10px); /* Effetto blur dietro la navbar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Aggiunge una leggera ombra */
+}
+
+/* Stile per il logo nella navbar */
+nav img {
+    height: 60px; /* Altezza per il logo */
+    width: auto;
+}
+
+/* Stili per i link della navbar */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00aaff; /* Colore del testo al passaggio del mouse */
+}
+
+/* Stile per il dropdown */
+.dropdown-trigger {
+    background-color: rgba(0, 0, 50, 0.8); /* Sfondo per il pulsante dropdown */
+    color: white;
+    border: none;
+}
+
+.dropdown-trigger:hover {
+    color: #00aaff;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none; /* Nascondi di default */
+    cursor: pointer; /* Cursore a mano quando sopra l'hamburger */
+}
+
+/* Stile per il menu mobile */
+.mobile-menu {
+    background-color: rgba(0, 0, 50, 0.8);
+}
+
+/* Media query per il menu mobile a 960px */
+@media (max-width: 960px) {
+    .hamburger {
+        display: block; /* Mostra l'hamburger */
+    }
+
+    .mobile-menu {
+        display: block; /* Mostra il menu mobile */
+    }
+
+    nav img {
+        height: 50px; /* Logo più piccolo su mobile */
+    }
+}
+
+/* Navbar styles */
+.navbar .nav-link {
+    font-size: 13px; /* Dimensione del testo */
+    font-weight: 700; /* Mantiene un peso del carattere leggibile */
+    padding: 10px 15px; /* Padding per migliorare la leggibilità */
+    color: #fff; /* Testo bianco */
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #e04f67; /* Cambia il colore al passaggio del mouse */
+}
+
+/* Sticky Navbar specific styles */
+.sticky .navbar .nav-link {
+    font-size: 8px; /* Font size per navbar sticky più compatta */
+}
+
+/* Media query per schermi di dimensioni medie */
+/* Carosello */
+.carousel-container {
+    width: 100%;
+    max-width: 600px; /* Limita la larghezza massima se necessario */
+    margin: 0 auto; /* Centra il carosello */
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto; /* Mantiene le proporzioni */
+    border-radius: 8px; /* Aggiungi angoli arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiungi un'ombra per dare profondità */
+}
+
+.slick-slide {
+    display: flex; /* Assicura che il contenuto si allinei correttamente */
+    justify-content: center; /* Centra l'immagine */
+    align-items: center; /* Centra verticalmente l'immagine */
+}
+
+.carousel-content {
+    margin-top: 16px; /* Spazio sopra il testo */
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+    .carousel-image {
+        height: 300px; /* Imposta un'altezza specifica per le immagini su mobile */
+    }
+}
+
+/* Media query per il carosello */
+@media (max-width: 768px) {
+    .carousel-image {
+        height: 40vh; /* Altezza ridotta per schermi più piccoli */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .carousel-image {
+        height: 50vh; /* Altezza intermedia per schermi di dimensione media */
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel-image {
+        height: 64vh; /* Altezza standard per schermi grandi */
+    }
+}
