@@ -598,3 +598,32 @@ body p, h1, h2, h3, h4, h5, h6,a {
         display: none; /* Nascondi il bottone per il menu mobile */
     }
 }
+
+
+
+.carousel-container {
+    margin-bottom: 20px;
+}
+
+.carousel-image {
+    width: 100%; /* Assicura che l'immagine occupi tutta la larghezza del contenitore */
+    height: auto; /* Permette che l'altezza sia automatica in base alla larghezza */
+    max-height: 300px; /* Limita l'altezza massima se necessario */
+    transition: transform 0.3s ease;
+}
+
+.carousel-image:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries per migliorare l'adattamento */
+@media (max-width: 657px) {
+    .carousel-container {
+        padding: 0 10px; /* Aggiungi un padding per il contenitore */
+    }
+
+    .carousel-image {
+        height: auto; /* Permette che l'immagine si adatti automaticamente */
+        max-height: 200px; /* Limita l'altezza per schermi più piccoli */
+    }
+}

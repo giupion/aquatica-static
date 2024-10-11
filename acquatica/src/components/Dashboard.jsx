@@ -40,16 +40,25 @@ export default function Dashboard() {
         autoplay: true,
         autoplaySpeed: 2000,
         pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 657, // Per schermi fino a 657px
+                settings: {
+                    slidesToShow: 1, // Mostra 1 slide alla volta
+                    slidesToScroll: 1,
+                    adaptiveHeight: true, // Adatta l'altezza del carosello
+                }
+            },
+        ]
     };
-
     return (
         <AuthenticatedLayout>
             <Helmet>
                 <title>Dashboard</title>
             </Helmet>
 
-            <header className="bg-white py-4 text-center">
-                <section id="acquatica" className="bg-white py-6">
+            <header className="bg-[#fff] py-4 text-center">
+                <section id="acquatica" className="bg-[#fff] py-6">
                     <div className="container mx-auto">
                         <div className="flex flex-col lg:flex-row items-center justify-center p-6 rounded-lg">
                             <div className="lg:w-1/2 text-left p-4">
@@ -66,11 +75,11 @@ export default function Dashboard() {
                                     Scopri di più
                                 </a>
                             </div>
-                            <div className="lg:w-1/2 lg:pr-0 flex justify-center lg:justify-end mt-4 lg:mt-0">
+                            <div className="lg:w-1/2 lg:pr-0 flex justify-center lg:justify-end">
                                 <img 
-                                    src={acquaticaImg}
+                                    src={acquaticaImg} // Usa l'immagine di acquatica
                                     alt="Acquatica"
-                                    className="max-w-full h-auto shadow rounded-lg" 
+                                    className="max-w-full h-auto shadow" 
                                 />
                             </div>
                         </div>
@@ -79,7 +88,7 @@ export default function Dashboard() {
             </header>
 
             {/* Resto del contenuto della dashboard */}
-            <div className="py-12 bg-white relative overflow-hidden">
+            <div className="py-12 bg-[#fff] relative overflow-hidden">
                 <div className="discover-acquatica-section py-12 bg-[#001f3f]">
                     <h2 className="text-4xl font-bold text-center text-white mb-8">Discover Acquatica</h2>
 
@@ -87,12 +96,12 @@ export default function Dashboard() {
                         <img 
                             src={sailboatImages[0].url} 
                             alt={sailboatImages[0].tags} 
-                            className="w-full h-48 md:h-64 object-cover rounded-lg"
+                            className="w-full h-64 object-cover rounded-lg"
                         />
                         <img 
                             src={inflatableImages[0].url} 
                             alt={inflatableImages[0].tags} 
-                            className="w-full h-48 md:h-64 object-cover rounded-lg"
+                            className="w-full h-64 object-cover rounded-lg"
                         />
                         <div className="flex flex-col items-center justify-start p-2 col-span-1 sm:col-span-2">
                             <img 
@@ -105,12 +114,12 @@ export default function Dashboard() {
                             </p>
                         </div>
                         <div 
-                            className="relative col-span-1 sm:col-span-2 p-4 rounded-lg bg-cover bg-center bg-no-repeat h-60 md:h-96" 
+                            className="relative col-span-1 sm:col-span-2 p-4 rounded-lg bg-cover bg-center bg-no-repeat h-96" 
                             style={{ backgroundImage: `url(${bornfreeImg})` }} // Usa l'immagine bornfree
                         >
                             <div className="absolute inset-0 bg-gray-800 bg-opacity-70 rounded-lg"></div>
                             <div className="relative z-10 flex items-center justify-center h-full">
-                                <h3 className="text-white text-2xl md:text-4xl font-bold text-center">
+                                <h3 className="text-white text-4xl font-bold text-center">
                                     Born Free - Esplora l'infinito
                                 </h3>
                             </div>
@@ -118,9 +127,9 @@ export default function Dashboard() {
                         <img 
                             src={sailboatImages[1].url} 
                             alt={sailboatImages[1].tags} 
-                            className="w-full h-48 md:h-64 object-cover rounded-lg"
+                            className="w-full h-64 object-cover rounded-lg"
                         />
-                        <video autoPlay loop className="w-full h-48 md:h-64 object-cover rounded-lg col-span-1">
+                        <video autoPlay loop className="w-full h-64 object-cover rounded-lg col-span-1">
                             <source src={bornFreeVideo} type="video/mp4" />
                             Il tuo browser non supporta il tag video.
                         </video>
@@ -135,44 +144,136 @@ export default function Dashboard() {
             </div>
 
             <div className="flex flex-col lg:flex-row items-start justify-between bg-[#001f3f]">
-                <div className="lg:w-1/2 p-4">
-                    <h3 className="text-2xl font-bold mb-4 text-center text-white">Le Nostre Barche</h3>
-                    <Slider {...settings} className="carousel-container mb-8">
-                        {sailboatImages.map((image, index) => (
-                            <div key={index} className="p-2">
-                                <img 
-                                    src={image.url} 
-                                    alt={image.tags} 
-                                    className="carousel-image w-full h-48 md:h-64 object-cover rounded-lg" 
-                                />
-                            </div>
-                        ))}
-                    </Slider>
-                    <h3 className="text-xl font-bold mb-4 text-white">Descrizione delle Barche</h3>
-                    <p className="text-white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
-                    </p>
+    <div className="lg:w-1/2 w-full p-4">
+        <h3 className="text-2xl font-bold mb-4 text-center text-white">Le Nostre Barche</h3>
+        <Slider {...settings} className="carousel-container mb-8">
+            {sailboatImages.map((image, index) => (
+                <div key={index} className="p-2">
+                    <img 
+                        src={image.url} 
+                        alt={image.tags} 
+                        className="carousel-image w-full h-auto object-cover rounded-lg" 
+                    />
                 </div>
+            ))}
+        </Slider>
+        <h3 className="text-xl font-bold mb-4 text-white">Descrizione delle Barche</h3>
+        <p className="text-white">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
+        </p>
+    </div>
 
-                <div className="lg:w-1/2 p-4">
-                    <h3 className="text-2xl font-bold mb-4 text-center text-white">I Nostri Gommoni</h3>
-                    <Slider {...settings} className="carousel-container mb-8">
-                        {inflatableImages.map((image, index) => (
-                            <div key={index} className="p-2">
-                                <img 
-                                    src={image.url} 
-                                    alt={image.tags} 
-                                    className="carousel-image w-full h-48 md:h-64 object-cover rounded-lg" 
-                                />
-                            </div>
-                        ))}
-                    </Slider>
-                    <h3 className="text-xl font-bold mb-4 text-white">Descrizione dei Gommoni</h3>
-                    <p className="text-white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
-                    </p>
+    <div className="lg:w-1/2 w-full p-4">
+        <h3 className="text-2xl font-bold mb-4 text-center text-white">I Nostri Gommoni</h3>
+        <Slider {...settings} className="carousel-container mb-8">
+            {inflatableImages.map((image, index) => (
+                <div key={index} className="p-2">
+                    <img 
+                        src={image.url} 
+                        alt={image.tags} 
+                        className="carousel-image w-full h-auto object-cover rounded-lg" 
+                    />
                 </div>
+            ))}
+        </Slider>
+        <h3 className="text-xl font-bold mb-4 text-white">Descrizione dei Gommoni</h3>
+        <p className="text-white">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
+        </p>
+    </div>
+</div>
+
+
+{/* Sezione Iscriviti alla Newsletter e Contattaci */}
+<div className="contact-newsletter-section flex flex-col lg:flex-row justify-between items-stretch py-24 bg-white">
+    {/* Sezione Iscriviti alla Newsletter */}
+    <div 
+        className="newsletter-section w-full lg:w-1/2 p-8 relative" 
+        style={{
+            backgroundImage: `url(${sailboat1})`, 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center', 
+            height: '100%' // Imposta l'altezza per il background
+        }}
+    >
+        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Sfondo semi-trasparente */}
+        <div className="relative z-10 p-4"> {/* Aggiunta di padding per creare spazio interno */}
+            <h2 className="text-3xl font-bold mb-4 text-white text-center">Iscriviti alla nostra Newsletter</h2>
+            <p className="mb-6 text-white text-center">Rimani aggiornato sulle ultime novità e offerte esclusive!</p>
+            <form className="flex justify-center">
+                <input 
+                    type="email" 
+                    placeholder="Inserisci la tua email"
+                    className="p-2 rounded-l-lg w-64" 
+                />
+                <button className="bg-blue-500 text-white p-2 rounded-r-lg">Iscriviti</button> {/* Pulsante blu */}
+            </form>
+        </div>
+    </div>
+
+    {/* Sezione Contattaci */}
+    <div 
+        className="contact-us-section w-full lg:w-1/2 p-8 relative" 
+        style={{
+            backgroundImage: `url(${inflatable3})`, 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center', 
+            height: '100%' // Imposta l'altezza per il background
+        }}
+    >
+        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Sfondo semi-trasparente */}
+        <div className="relative z-10 p-4"> {/* Aggiunta di padding per creare spazio interno */}
+            <h2 className="text-3xl font-bold mb-4 text-white text-center">Contattaci</h2>
+            <p className="mb-6 text-white text-center">Hai domande? Siamo qui per aiutarti!</p>
+            <div className="flex justify-center"> {/* Aggiunto z-10 per portare il pulsante sopra l'oscuramento */}
+                <a href="/contact" className="bg-blue-500 text-white p-3 rounded-lg">Contattaci</a> {/* Pulsante blu */}
             </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+            {/* Footer */}
+<footer className="bg-[#001f3f] text-white py-8">
+    <div className="container mx-auto px-4">
+        <div className="flex flex-wrap justify-between">
+            {/* Sezione Logo */}
+            <div className="w-full md:w-1/3 mb-6">
+            <img 
+                    src={logoNegativo} 
+                    alt="Logo Acquatica"
+                    className="h-16 w-30 mb-2"
+                />
+                <p className="text-gray-400">© 2024 Acquatica. Tutti i diritti riservati.</p>
+            </div>
+            
+            {/* Sezione Links */}
+            <div className="w-full md:w-1/3 mb-6">
+                <h3 className="font-bold mb-2">Link Utili</h3>
+                <ul>
+                    <li><a href="/privacy" className="text-gray-400 hover:text-sky-400">Privacy Policy</a></li>
+                    <li><a href="/terms" className="text-gray-400 hover:text-sky-400">Termini di Servizio</a></li>
+                    <li><a href="/about" className="text-gray-400 hover:text-sky-400">Chi Siamo</a></li>
+                </ul>
+            </div>
+            
+            {/* Sezione Contatti */}
+            <div className="w-full md:w-1/3 mb-6">
+                <h3 className="font-bold mb-2">Contatti</h3>
+                <p className="text-gray-400">Email: info@acquatica.com</p>
+                <p className="text-gray-400">Telefono: +39 012 345 6789</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
         </AuthenticatedLayout>
     );
 }
