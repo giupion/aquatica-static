@@ -183,7 +183,6 @@ export default function Dashboard() {
     </div>
 </div>
 
-
 {/* Sezione Iscriviti alla Newsletter e Contattaci */}
 <div className="contact-newsletter-section flex flex-col lg:flex-row justify-between items-stretch py-24 bg-white">
     {/* Sezione Iscriviti alla Newsletter */}
@@ -193,7 +192,7 @@ export default function Dashboard() {
             backgroundImage: `url(${sailboat1})`, 
             backgroundSize: 'cover', 
             backgroundPosition: 'center', 
-            height: '100%' // Imposta l'altezza per il background
+            height: '400px' // Imposta un'altezza fissa per entrambe le sezioni
         }}
     >
         <div className="absolute inset-0 bg-black opacity-50"></div> {/* Sfondo semi-trasparente */}
@@ -218,7 +217,7 @@ export default function Dashboard() {
             backgroundImage: `url(${inflatable3})`, 
             backgroundSize: 'cover', 
             backgroundPosition: 'center', 
-            height: '100%' // Imposta l'altezza per il background
+            height: '400px' // Imposta un'altezza fissa per entrambe le sezioni
         }}
     >
         <div className="absolute inset-0 bg-black opacity-50"></div> {/* Sfondo semi-trasparente */}
@@ -231,6 +230,7 @@ export default function Dashboard() {
         </div>
     </div>
 </div>
+
 
 
 
